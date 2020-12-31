@@ -29,6 +29,7 @@ entity volladdierer is
            SOUT : out STD_LOGIC);
 end volladdierer;
 
+
 architecture Verhalten of volladdierer is
 begin
 addition: process(AIN, BIN, CIN)
