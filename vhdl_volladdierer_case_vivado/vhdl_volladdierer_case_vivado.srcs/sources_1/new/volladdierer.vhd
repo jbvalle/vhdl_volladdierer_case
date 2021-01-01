@@ -33,14 +33,9 @@ addition: process(AIN, BIN, CIN)
         TEMP_in := CIN & BIN & AIN;
         case TEMP_in is
             when "000" => TEMP_out := "00";
-            when "001" => TEMP_out := "01";
-            when "010" => TEMP_out := "01";
-            when "011" => TEMP_out := "10";
-            when "100" => TEMP_out := "01";
-            when "101" => TEMP_out := "10";
-            when "110" => TEMP_out := "10";
+            when "011" | "101" | "101" | "110" => TEMP_out := "10";
             when "111" => TEMP_out := "11";
-            when others => TEMP_out := "00";
+            when others => TEMP_out := "01";
         end case;
         SOUT <= TEMP_out(0);
         COUT <= TEMP_out(1);
